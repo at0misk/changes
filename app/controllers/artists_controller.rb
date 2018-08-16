@@ -45,7 +45,7 @@ class ArtistsController < ApplicationController
 	end
 	def create_session
 		@hash = Digest::MD5.hexdigest params['password']
-		if @hash == '10f18bf3082cd5904fc0f291eb6852fc'
+		if @hash == 'bae7522921b6d135cdc372ffc5fac115'
 			session[:logged] = true
 			redirect_to '/artists'
 		else
