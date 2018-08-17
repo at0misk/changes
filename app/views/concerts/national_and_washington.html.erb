@@ -371,6 +371,14 @@ fieldset[disabled] .btn-grey.active {
 	min-width:200px;
 }
 
+.img-overlay h1 {
+/*    font-size: 5vw;
+    color: white;
+    font-family: 'Oswald', sans-serif;*/
+    /* box-shadow: 0px 0px 0px black; */
+    /*text-shadow: 5px 5px 5px black;*/
+}
+
 </style>
 <!-- <div class="row top-row">
 	<div class="row navigation-row">
@@ -429,6 +437,8 @@ fieldset[disabled] .btn-grey.active {
 		<div class="col-sm-2">
 		</div>
 		<div class="col-sm-8 call-col body-col">
+<!-- 			<h3>20 site-specific performances and interactive works from Los Angeles artists in and around Union Station.</h3>
+			<h3>www.changesunionstation.info</h3> -->
 			<h1 class="body-headers">PRESS RELEASE</h1>
 				<p>CHANGES: Works at UNION STATION</p>
 				<p>SUNDAY, AUG 26, 2018: 1-6 PM</p>
@@ -466,7 +476,7 @@ fieldset[disabled] .btn-grey.active {
 						      <h4 class="panel-title"><%= val.name %> <span class="title-ital">- <%= val.title %></span></h4>
 						    </div>
 						</a>
-					    <div id="collapse<%= count %>" class="scroll<%= val.name_id %> panel-collapse collapse<% if count == 0 %> in <% end %>" role="tabpanel" aria-labelledby="headingOne">
+					    <div id="collapse<%= count %>" class="scroll<%= val.name_id %> panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 					      <div class="panel-body">
 					      	<h5 class="wherewhen"><%= val.where %> - <%= val.when %></h5>
 					      	<% if val.avatar.file? %>
