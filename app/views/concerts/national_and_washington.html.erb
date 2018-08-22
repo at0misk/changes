@@ -379,6 +379,10 @@ fieldset[disabled] .btn-grey.active {
     /*text-shadow: 5px 5px 5px black;*/
 }
 
+.artist-info img{
+	max-width: 380px !important;
+}
+
 </style>
 <!-- <div class="row top-row">
 	<div class="row navigation-row">
@@ -479,7 +483,7 @@ fieldset[disabled] .btn-grey.active {
 						    </div>
 						</a>
 					    <div id="collapse<%= count %>" class="scroll<%= val.name_id %> panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-					      <div class="panel-body">
+					      <div class="panel-body artist-info">
 					      	<h5 class="wherewhen"><%= val.where %> - <%= val.when %></h5>
 					      	<% if val.avatar.file? %>
 						      	<%= image_tag val.avatar.url(:large), :class => "img-fluid" %>
