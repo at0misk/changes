@@ -477,8 +477,8 @@ fieldset[disabled] .btn-grey.active {
 					<% if val.name_id == 'reception' || val.multi_location == true %>
 					<% else %>
 					  <div class="panel panel-default" id="scroll<%= val.name_id %>">
-					    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>" aria-expanded="false" aria-controls="collapseOne">
-						    <div class="panel-heading" role="tab" id="headingOne">
+					    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>" aria-expanded="false" aria-controls="collapse<%= count %>">
+						    <div class="panel-heading" role="tab" id="heading<%= count %>">
 						      <h4 class="panel-title"><%= val.name %> <span class="title-ital">- <%= val.title %></span></h4>
 						    </div>
 						</a>
