@@ -661,7 +661,7 @@ fieldset[disabled] .btn-grey.active {
 	});
 
 $('.accordion-panel').on('shown.bs.collapse', function (e) {
-e.preventDefault();
+$('html,body').stop();
 var panel = $(this).find('.in');
 
 $('html, body').animate({
