@@ -661,6 +661,17 @@ fieldset[disabled] .btn-grey.active {
 	});
 
 
+$('.accordion-panel').on('shown.bs.collapse', function (e) {
+
+var panel = $(this).find('.in');
+
+$('html, body').animate({
+      scrollTop: panel.offset().top
+}, 500);
+
+});
+
+
 
 	window.onscroll = function(ev) {
 	    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
