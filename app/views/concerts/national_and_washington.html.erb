@@ -660,8 +660,8 @@ fieldset[disabled] .btn-grey.active {
 		console.log($(this));
 	});
 
-$('.accordion-panel').on('shown.bs.collapse', function () {
-
+$('.accordion-panel').on('shown.bs.collapse', function (e) {
+e.preventDefault();
 var panel = $(this).find('.in');
 
 $('html, body').animate({
