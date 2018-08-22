@@ -477,7 +477,7 @@ fieldset[disabled] .btn-grey.active {
 					<% if val.name_id == 'reception' || val.multi_location == true %>
 					<% else %>
 					  <div class="panel panel-default accordion-panel" id="scroll<%= val.name_id %>">
-					    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= count %>" aria-expanded="false" aria-controls="collapse<%= count %>">
+					    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="" aria-expanded="false" aria-controls="collapse<%= count %>" data-target="collapse<%= count %>">
 						    <div class="panel-heading" role="tab" id="heading<%= count %>">
 						      <h4 class="panel-title" id="panel-heading"><%= val.name %> <span class="title-ital">- <%= val.title %></span></h4>
 						    </div>
@@ -667,7 +667,7 @@ fieldset[disabled] .btn-grey.active {
 		    console.log(anchor);
 			$('html, body').animate({
 			    scrollTop: anchor.offset().top-100
-			}, 100);
+			}, 200);
 		    // return false;
 		console.log($(this));
 	});
