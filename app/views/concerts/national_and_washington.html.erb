@@ -663,7 +663,7 @@ fieldset[disabled] .btn-grey.active {
 
 $('.accordion-panel').on('shown.bs.collapse', function (e) {
 
-var panel = $(this).find('.in');
+var panel = $(this).find('a');
 
 $('html, body').animate({
       scrollTop: panel.offset().top
