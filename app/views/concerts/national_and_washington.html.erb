@@ -657,6 +657,7 @@ fieldset[disabled] .btn-grey.active {
 		    $('.navbar-toggle').click() //bootstrap 3.x by Richard
 		    // return false;
 		}
+		console.log($(this));
 	});
 
 
@@ -675,19 +676,19 @@ fieldset[disabled] .btn-grey.active {
 
 var show = true;
 
-$('.mobile-show-hide').click(function(){
-	if(show == true){
-		$(this).text('Hide Map Legend');
-		$('#legend li').show();
-		show = false;
-	}
-	else{
-		$(this).text('Show Map Legend');
-		$('#legend li').hide();
-		show = true;
-	}
+// $('.mobile-show-hide').click(function(){
+// 	if(show == true){
+// 		$(this).text('Hide Map Legend');
+// 		$('#legend li').show();
+// 		show = false;
+// 	}
+// 	else{
+// 		$(this).text('Show Map Legend');
+// 		$('#legend li').hide();
+// 		show = true;
+// 	}
 
-})
+// })
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-n3Bj4NngwQhrVi_vTrFVwNSEMHP8UAw&callback=initMap" async defer></script>
