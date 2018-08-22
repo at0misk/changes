@@ -545,101 +545,101 @@ fieldset[disabled] .btn-grey.active {
 		$(document).ready(function() {
 		    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 		});
-      function initMap() {
-    // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: parseFloat('34.028689'), lng: parseFloat('-118.385719')},
-      zoom: 17
-    });
-    var infowindow = new google.maps.InfoWindow();
-    // positions
-    <% @artists.each do |val| %>
-    	<% if val.lat != "" && val.long != "" %>
-	    	var pos<%= val.id %> = {lat: <%= val.lat %>, lng: <%= val.long %>};
-		    var contentString<%= val.id %> = '<div class="content">'+
-		        '<div id="siteNotice">'+
-		        '</div>'+
-		        <% if val.multi_location == true %>
-		        "<h5 class='maptitle'><a class='bodyScroll' href='#scroll<%= val.name_id.chop %>'><%= val.title %></a></h5 class='maptitle'>" +
-		        <% else %>
-		        "<h5 class='maptitle'><a class='bodyScroll' href='#scroll<%= val.name_id %>'><%= val.title %></a></h5 class='maptitle'>" +
-		        <% end %>
-		        '<div class="mapBodyContent">'+
-		        '<h6><%= val.name %></h6>'+
-		        "<p><%= val.where %></p>" + 
-		        "<p><%= val.when %></p>" +
-		        '</div>'+
-		        '</div>';
-		    var marker<%= val.id %> = new google.maps.Marker({
-		      position: pos<%= val.id %>,
-		      map: map,
-		      title: '<%= val.title %>',
-		      icon: "<%= escape_javascript asset_path('location_icon.png') %>"
-		    });
-		    marker<%= val.id %>.addListener('click', function(){
-			    infowindow.close();
-			    infowindow.setContent(contentString<%= val.id %>);
-			    infowindow.open(map, marker<%= val.id %>);
-		    });
-		    $('#<%= val.name_id %>').click(function(){
-		    infowindow.close();
-		    infowindow.setContent(contentString<%= val.id %>);
-		    infowindow.open(map, marker<%= val.id %>);
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-				    $('.mobile-show-hide').click();
-				}
-		    });
-		    marker<%= val.id %>.addListener('click', function(){
-			    infowindow.close();
-			    infowindow.setContent(contentString<%= val.id %>);
-			    infowindow.open(map, marker<%= val.id %>);
-		    });
-		<% end %>
-	<% end %>
-    // var khost = {lat: 34.051836, lng: -118.245442};
-    //     // NEW STUFF
-    // var contentStringKhost = '<div id="content">'+
-    //     '<div id="siteNotice">'+
-    //     '</div>'+
-    //     '<h6>Alex Khost & Amy Bauer</h6>'+
-    //     '<div class="mapBodyContent">'+
-    //     "<p>In Memoriam: A Funeral Procession for the Death of Love</p>" +
-    //     "<p>Spring / 1st to 4th - 11:30 PM</p>" +
-    //     '</div>'+
-    //     '</div>';
-    // var markerKhost = new google.maps.Marker({
-    //   position: khost,
-    //   map: map,
-    //   title: 'In Memoriam: A Funeral Procession for the Death of Love',
-    //   icon: "<%= escape_javascript asset_path('location_icon.png') %>"
-    // });
-    // $('#khost').click(function(){
-    // infowindow.close();
-    // infowindow.setContent(contentStringKhost);
-    // infowindow.open(map, markerKhost);
-    // });
-    // markerKhost.addListener('click', function(){
-	   //  infowindow.close();
-	   //  infowindow.setContent(contentStringKhost);
-	   //  infowindow.open(map, markerKhost);
-    // });
-    map.controls[google.maps.ControlPosition.LEFT_TOP].push(document.getElementById('legend'));
+//       function initMap() {
+//     // Create a map object and specify the DOM element for display.
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//       center: {lat: parseFloat('34.028689'), lng: parseFloat('-118.385719')},
+//       zoom: 17
+//     });
+//     var infowindow = new google.maps.InfoWindow();
+//     // positions
+//     <% @artists.each do |val| %>
+//     	<% if val.lat != "" && val.long != "" %>
+// 	    	var pos<%= val.id %> = {lat: <%= val.lat %>, lng: <%= val.long %>};
+// 		    var contentString<%= val.id %> = '<div class="content">'+
+// 		        '<div id="siteNotice">'+
+// 		        '</div>'+
+// 		        <% if val.multi_location == true %>
+// 		        "<h5 class='maptitle'><a class='bodyScroll' href='#scroll<%= val.name_id.chop %>'><%= val.title %></a></h5 class='maptitle'>" +
+// 		        <% else %>
+// 		        "<h5 class='maptitle'><a class='bodyScroll' href='#scroll<%= val.name_id %>'><%= val.title %></a></h5 class='maptitle'>" +
+// 		        <% end %>
+// 		        '<div class="mapBodyContent">'+
+// 		        '<h6><%= val.name %></h6>'+
+// 		        "<p><%= val.where %></p>" + 
+// 		        "<p><%= val.when %></p>" +
+// 		        '</div>'+
+// 		        '</div>';
+// 		    var marker<%= val.id %> = new google.maps.Marker({
+// 		      position: pos<%= val.id %>,
+// 		      map: map,
+// 		      title: '<%= val.title %>',
+// 		      icon: "<%= escape_javascript asset_path('location_icon.png') %>"
+// 		    });
+// 		    marker<%= val.id %>.addListener('click', function(){
+// 			    infowindow.close();
+// 			    infowindow.setContent(contentString<%= val.id %>);
+// 			    infowindow.open(map, marker<%= val.id %>);
+// 		    });
+// 		    $('#<%= val.name_id %>').click(function(){
+// 		    infowindow.close();
+// 		    infowindow.setContent(contentString<%= val.id %>);
+// 		    infowindow.open(map, marker<%= val.id %>);
+// 				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+// 				    $('.mobile-show-hide').click();
+// 				}
+// 		    });
+// 		    marker<%= val.id %>.addListener('click', function(){
+// 			    infowindow.close();
+// 			    infowindow.setContent(contentString<%= val.id %>);
+// 			    infowindow.open(map, marker<%= val.id %>);
+// 		    });
+// 		<% end %>
+// 	<% end %>
+//     // var khost = {lat: 34.051836, lng: -118.245442};
+//     //     // NEW STUFF
+//     // var contentStringKhost = '<div id="content">'+
+//     //     '<div id="siteNotice">'+
+//     //     '</div>'+
+//     //     '<h6>Alex Khost & Amy Bauer</h6>'+
+//     //     '<div class="mapBodyContent">'+
+//     //     "<p>In Memoriam: A Funeral Procession for the Death of Love</p>" +
+//     //     "<p>Spring / 1st to 4th - 11:30 PM</p>" +
+//     //     '</div>'+
+//     //     '</div>';
+//     // var markerKhost = new google.maps.Marker({
+//     //   position: khost,
+//     //   map: map,
+//     //   title: 'In Memoriam: A Funeral Procession for the Death of Love',
+//     //   icon: "<%= escape_javascript asset_path('location_icon.png') %>"
+//     // });
+//     // $('#khost').click(function(){
+//     // infowindow.close();
+//     // infowindow.setContent(contentStringKhost);
+//     // infowindow.open(map, markerKhost);
+//     // });
+//     // markerKhost.addListener('click', function(){
+// 	   //  infowindow.close();
+// 	   //  infowindow.setContent(contentStringKhost);
+// 	   //  infowindow.open(map, markerKhost);
+//     // });
+//     map.controls[google.maps.ControlPosition.LEFT_TOP].push(document.getElementById('legend'));
 
-	// google.maps.event.addListenerOnce(map, 'tilesloaded', mapScroll);
+// 	// google.maps.event.addListenerOnce(map, 'tilesloaded', mapScroll);
 
- //  	function mapScroll(){
- //  		console.log('fired');
- 		$(document).on('click', '.bodyScroll', function(){
-		    var href = $(this).attr('href');
-		    var anchor = $(href);
-		    sbstr = href.substring(1);
-		    $('.' + sbstr).collapse('show');
-			$('html, body').animate({
-			    scrollTop: anchor.offset().top-100
-			}, 1500);
-		});
- //  	}
-}
+//  //  	function mapScroll(){
+//  //  		console.log('fired');
+//  		$(document).on('click', '.bodyScroll', function(){
+// 		    var href = $(this).attr('href');
+// 		    var anchor = $(href);
+// 		    sbstr = href.substring(1);
+// 		    $('.' + sbstr).collapse('show');
+// 			$('html, body').animate({
+// 			    scrollTop: anchor.offset().top-100
+// 			}, 1500);
+// 		});
+//  //  	}
+// }
 
 
 	$('ul.nav').find('a').click(function(){
