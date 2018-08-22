@@ -660,17 +660,7 @@ fieldset[disabled] .btn-grey.active {
 		console.log($(this));
 	});
 
-		$('.accordion-panel').find('a').click(function(e){
-			e.preventDefault();
-		    var href = $(this).find('.panel-heading');
-		    var anchor = $(href);
-		    console.log(anchor);
-			$('html, body').animate({
-			    scrollTop: anchor.offset().top-100
-			}, 200);
-		    // return false;
-		console.log($(this));
-	});
+
 
 
 
