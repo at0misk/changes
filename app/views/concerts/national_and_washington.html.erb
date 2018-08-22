@@ -660,20 +660,6 @@ fieldset[disabled] .btn-grey.active {
 		console.log($(this));
 	});
 
-$('.accordion-panel a').click(function(e){
-	e.preventDefault();
-})
-
-$('.accordion-panel').on('shown.bs.collapse', function (e) {
-
-var panel = $(this).find('.in');
-
-$('html, body').animate({
-      scrollTop: panel.offset().top - 130
-}, 500);
-
-});
-
 
 
 	window.onscroll = function(ev) {
